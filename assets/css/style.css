@@ -1,11 +1,23 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    /* background-color: rgb(7, 189, 222); */
-    background-color: black;
+    height: 1000px; 
+    width: 100%; 
+    background-color: black; 
+} 
+
+#hero-image {
+    background-image: url(../images/nightsky.jpeg);
+    background-color: black; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 100%; 
+    width: 100%; 
+
 }
 
 #intro {
@@ -22,14 +34,24 @@ body {
     text-justify: center;
     margin: auto;
     width: 33%;
+    height: 43%;
 }
 
 #intro h1 {
     padding: 2% 10%;
+    font-size: 2em;
 }
 
 #intro p {
     font-size: 2em;
+}
+
+#second-text p {
+    /* Text styling */ 
+    text-align: center;
+    text-justify: center;
+    color: red;
+    padding-bottom: 50%;
 }
 
 /* Wizard's Tower Logo Styling */
@@ -61,5 +83,16 @@ body {
 
 .fade{
     animation: fadein 3s ;
+
+}
+
+@keyframes fadein2 {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fade2{
+    animation: fadein2 3s ;
 
 }

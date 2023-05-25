@@ -9,27 +9,25 @@
     <title>The Wizard's Tower</title>
 </head>
 <body>
+    <section id="hero-image">
+        <img src="assets/images/wizards_logo.png" alt="The Wizards Tower Logo" id="logo">
+
+        <section id="intro">
+            <h1>Welcome to the Wizard's Tower!</h1>
+            <p>
+                Greetings adventurer. Your periluous quest to the top of the wizard's tower begins now. But first, introductions. By what moniker are you best known?
+            </p>    
     
-    <img src="assets/images/wizards_logo.png" alt="The Wizards Tower Logo" id="logo">
+            <div id="name">
+                <label for="fname">Your Name?</label><br>
+    
+                <input type="text" id="fname" name="fname" placeholder="????"><br>   
+                <button onclick="saveName()" id="nameButton">Venture Forth</button> 
+            </div>
+        </section>   
 
-    <div id="intro">
-        <h1>Welcome to the Wizard's Tower!</h1>
-        <p>
-            Greetings adventurer. Your periluous quest to the top of the wizard's tower begins now. But first, introductions. By what moniker are you best known?
-        </p>    
-
-        <div id="name">
-            <label for="fname">Your Name?</label><br>
-
-            <input type="text" id="fname" name="fname" placeholder="????"><br>   
-            <button onclick="saveName()" id="nameButton">Venture Forth</button> 
-        </div>
-    </div>
-
-    <div class="container">
-
-    </div>
-
+        <div id="second-text"></div>
     <script src="assets/js/script.js"></script>
+    </section>
 </body>
 </html>
