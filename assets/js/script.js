@@ -3,11 +3,13 @@ console.log("Connected")
 
 /* Player Name */
 
-localStorage.setItem("playerName", playerName); 
+function saveName(){
+    let playerName = document.getElementById("fname").value;
+    console.log(playerName)
+    // document.GetElementById("intro").innerHTML = "Welcome " input ; 
 
-function savename(){
-    var playerName = document.GetElementById("input").value;
-    localStorage.set
+    document.getElementById("intro").innerHTML = `<p class="fade">Hello ${playerName}.</p>`; 
+    document.getElementById("intro").style.color = red; 
 }
 
 /*

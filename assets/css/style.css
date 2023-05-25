@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: rgb(7, 189, 222);
+    /* background-color: rgb(7, 189, 222); */
+    background-color: black;
 }
 
 #intro {
@@ -13,7 +14,7 @@ body {
     border-color: black;
     border-width: 5px;
     border-radius: 5px; 
-    padding: 2px 15px;
+    padding: 1px 10px;
 
     
     /* Text styling */ 
@@ -28,8 +29,7 @@ body {
 }
 
 #intro p {
-    font-size: x-large;
-    
+    font-size: 2em;
 }
 
 /* Wizard's Tower Logo Styling */
@@ -43,6 +43,23 @@ body {
 /* Player Name */
 
 #name {
-    padding-top: 10%;
-    font-size: x-large;
+    padding-top: 8%;
+    font-size: 2em;
+}
+
+#nameButton {
+    width: 33%;
+    height: 33%;
+}
+
+/* Fade in text */ 
+
+@keyframes fadein {
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fade{
+    animation: fadein 3s ;
+
 }
