@@ -15,18 +15,24 @@
         <section id="intro">
             <h1>Welcome to the Wizard's Tower!</h1>
             <p>
-                Greetings adventurer. Your periluous quest to the top of the wizard's tower begins now. But first, introductions. By what moniker are you best known?
+                Greetings adventurer. Your perilous quest to the top of the wizard's tower begins now. But first, introductions. 
             </p>    
     
             <div id="name">
-                <label for="fname">Your Name?</label><br>
+                <label for="fname">By what moniker are you best known?</label><br>
     
-                <input type="text" id="fname" name="fname" placeholder="????"><br>   
+                <input type="text" id="fname" name="fname" placeholder="????" ><br>   
                 <button onclick="saveName()" id="nameButton">Venture Forth</button> 
+            </div>
+
+            <div id="button-container">
+                <button class="button">Option 1</button>
+                <button class="button">Option 2</button>
+                <button class="button">Option 3</button>
+                <button class="button">Option 4</button>
             </div>
         </section>   
 
-        <div id="second-text"></div>
     <script src="assets/js/script.js"></script>
     </section>
 </body>
