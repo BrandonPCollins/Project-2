@@ -2,9 +2,42 @@ body {
     background-color: rgb(7, 189, 222);
 }
 
+#intro {
+    background-color: white;
+    border-style: solid; 
+    border-color: black;
+    border-width: 5px;
+    border-radius: 5px; 
+    padding: 2px 15px;
+
+    
+    /* Text styling */ 
+    text-align: justify;
+    text-justify: center;
+    margin: auto;
+    width: 33%;
+}
+
+#intro h1 {
+    padding-left: 10%;
+    padding-bottom: 10px;
+}
+
+#intro p {
+    font-size: x-large;
+}
+
+/* Wizard's Tower Logo Styling */
 #logo { 
     display:block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 35%;
 }
+
+
+/*
+
+Math.floor(Math.random() * 10 ); 
+
+*/ 
