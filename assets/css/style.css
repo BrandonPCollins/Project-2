@@ -80,7 +80,9 @@ body {
 }
 
 #nameButton:hover {
-    border-color: black;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(43, 41, 41);
+    color: white;
 }
 
 /* Option Buttons */ 
@@ -106,6 +108,21 @@ body {
     border-radius: 15px;
 }
 
+
+.class-button {
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: black;
+    outline: none;
+    animation: fadein2 3s ;
+}
+
+.class-button:hover {
+    border-color: black;
+    border-radius: 15px;
+}
+
 /* Fade in text */ 
 
 @keyframes fadein {
@@ -126,5 +143,4 @@ body {
 
 .fade2{
     animation: fadein2 3s ;
-
 }
