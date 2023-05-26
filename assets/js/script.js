@@ -27,7 +27,7 @@ function saveName(){
 function createClasses(){
     return document.getElementById("button-container").innerText = 
     `<div id="button-container" class="fade2">
-            <button class="button" onclick="setClass('knight'), startGame()" >Knight</button>
+            <button class="button" onclick="setClass('knight'), startGame()">Knight</button>
             <button class="button" onclick="setClass('thief'), startGame()">Thief</button>
             <button class="button" onclick="setClass('wizard'), startGame()">Wizard</button>
             <button class="button" onclick="setClass('goblin'), startGame()">Goblin</button>
