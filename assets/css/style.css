@@ -113,6 +113,9 @@ body {
     gap: 10px;
     margin-top: 20px;
     opacity: 100;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .button {
@@ -124,7 +127,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    width: 250px;
+    height: 100px;
 }
 
 .button:hover {
