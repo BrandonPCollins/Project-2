@@ -44,15 +44,15 @@ function setClass(classtype){
 // /* Stuff */ 
 
 const textElement = document.getElementById('intro')
-const optionButtonsElement = document.getElementById('button-container')
+const buttonContainer = document.getElementById('button-container')
 
 
 function startGame(){
     /* Create the option Buttons */  
-    textElement.innerText = 'Ello ello ' 
+    textElement.innerText = `You stand before the Wizard's tower. Its five floors have been the bane of many an adventurer, but you are built differently.` 
 
     if(playerClass === 'knight'){
-        textElement.innerText += '\n\nU R A KNIGHT ' 
+        textElement.innerText += `\n\nYou know upon reaching the top that the legendary tale of the knight Ser ${playerName} will live forever.`
     }else if (playerClass === 'thief'){
         textElement.innerText += '\n\nU R A THIEF ' 
     }else if (playerClass === 'wizard'){
@@ -61,7 +61,16 @@ function startGame(){
         textElement.innerText += '\n\nU R A GOBBO' 
     }
 
-    updateGameContent()
+    //clear previous buttons 
+    buttonContainer.innerHTML = ""
+
+
+    var button = document.createElement("button")
+    button.textContent = "Boldly go where none have gone before!"
+    button.className  = "button"
+    button.onclick = updateGameContent;
+
+    buttonContainer.appendChild(button);
 }
 
 
