@@ -1,9 +1,11 @@
 console.log("Connected")
 
-
 /* Player Name */
 
 let playerName = []; 
+
+let playerClass = [] ; 
+
 
 function saveName(){
     playerName = document.getElementById("fname").value;
@@ -18,21 +20,45 @@ function saveName(){
 
 
 /* Create Classes Buttons */ 
+
+
 function createClasses(){
     return document.getElementById("intro").innerHTML = 
     `<div id="button-container" class="fade2">
-            <button class="button">Knight</button>
-            <button class="button">Thief</button>
-            <button class="button">Wizard</button>
-            <button class="button">Bean</button>
+            <button class="class-button" onclick="setClass('knight'), startGame()" >Knight</button>
+            <button class="class-button" onclick="setClass('thief'), startGame()">Thief</button>
+            <button class="class-button" onclick="setClass('wizard'), startGame()">Wizard</button>
+            <button class="class-button" onclick="setClass('goblin'), startGame()">Goblin</button>
     </div>`; 
 }
 
-// const gameConfig = [
-//     {
-//         story-text: "Bingy Bongo"
-//     }
-// ]
+function setClass(classtype){
+    playerClass = classtype
+
+    console.log(playerClass)
+}
+
+
+// /* Stuff */ 
+
+const textElement = document.getElementById('intro')
+const optionButtonsElement = document.getElementById('button-container')
+
+
+function startGame(){
+    /* Create the option Buttons */  
+    textElement.innerText = 'Ello ello ' 
+
+    if(playerClass === 'knight'){
+        textElement.innerText += '\n\nU R A KNIGHT ' 
+    }else if (playerClass === 'thief'){
+        textElement.innerText += '\n\nU R A THIEF ' 
+    }else if (playerClass === 'wizard'){
+        textElement.innerText += '\n\nU R A WIZARD ' 
+    }else if (playerClass === 'goblin'){
+        textElement.innerText += '\n\nU R A GOBBO' 
+    }
+}
 
 /*
 Math.floor(Math.random() * 10 ); 

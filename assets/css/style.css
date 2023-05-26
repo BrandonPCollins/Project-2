@@ -22,7 +22,7 @@ body {
 
 /* Style the options box  */
 
-#intro {
+#title {
     background-color: white;
     border-style: solid; 
     border-color: black;
@@ -38,15 +38,35 @@ body {
     margin: auto;
     max-width: 33%;
     max-height: 80%;
+    font-size: 1.5em;
+
+}
+
+#intro {
+    background-color: white;
+    border-style: solid; 
+    border-color: black;
+    border-width: 5px;
+    border-radius: 15px; 
+    box-shadow: 10px 10px 5px 2px;
+    padding: 1px 1px;
+
+    
+    /* Text styling */ 
+    text-align: center;
+    text-justify: center;
+    margin: auto;
+    max-width: 33%;
+    max-height: 80%;
+    font-size: 1.5em;
 }
 
 #intro h1 {
     padding: 2% 10%;
-    font-size: 2em;
 }
 
 #intro p {
-    font-size: 2em;
+
 }
 
 #intro p::first-letter {
@@ -66,7 +86,7 @@ body {
 
 #name {
     padding-top: 8%;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 #nameButton {
@@ -101,13 +121,16 @@ body {
     padding: 5px 10px;
     color: black;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
 }
 
 .button:hover {
     border-color: black;
     border-radius: 15px;
 }
-
 
 .class-button {
     border: 1px solid blue;
@@ -119,9 +142,11 @@ body {
 }
 
 .class-button:hover {
-    border-color: black;
-    border-radius: 15px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(43, 41, 41);
+    color: white;
 }
+
 
 /* Fade in text */ 
 
