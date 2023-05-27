@@ -21,6 +21,16 @@ function saveName() {
   document.getElementById("button-container").innerHTML = createClasses();
 }
 
+/* Event Listener for the button */ 
+document.getElementById('fname').addEventListener('keydown', function(event) {
+  // Submit form on Enter key press 
+  if (event.key === 'Enter') {
+      event.preventDefault(); 
+      document.querySelector('button[type="submit"]').click(); 
+  }
+});
+
+
 /* Create Classes Buttons */
 
 function createClasses() {
