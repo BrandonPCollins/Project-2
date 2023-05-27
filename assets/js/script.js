@@ -17,6 +17,12 @@ function saveName() {
       return;
   }
 
+  if (playerName.length <= 1) {
+    alert("Your name can't just be one letter, just enter your name >:(");
+    return;
+}
+
+
   console.log(playerName);
 
   let wrongName = playerName.slice(1);
