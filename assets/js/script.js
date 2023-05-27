@@ -6,6 +6,9 @@ let playerName = [];
 
 let playerClass = [] ; 
 
+const textElement = document.getElementById('intro');
+const buttonContainer = document.getElementById('button-container');
+
 
 function saveName(){
     playerName = document.getElementById("fname").value;
@@ -25,7 +28,7 @@ function saveName(){
 /* Create Classes Buttons */ 
 
 function createClasses(){
-    return document.getElementById("button-container").innerText = 
+    return buttonContainer.innerText = 
     `<div id="button-container" class="fade2">
             <button class="button" onclick="setClass('knight'), startGame()">Knight</button>
             <button class="button" onclick="setClass('thief'), startGame()">Thief</button>
@@ -42,10 +45,6 @@ function setClass(classtype){
 
 
 // /* Stuff */ 
-
-const textElement = document.getElementById('intro')
-const buttonContainer = document.getElementById('button-container')
-
 
 function startGame(){
     /* Create the option Buttons */  
@@ -68,18 +67,32 @@ function startGame(){
     var button = document.createElement("button")
     button.textContent = "Boldly go where none have gone before!"
     button.className  = "button"
-    button.onclick = updateGameContent;
-
+    button.onclick = () => {
+        gameStartUp();
+        updateGameContent();
+      };    
     buttonContainer.appendChild(button);
 }
-
-
-  
   
 
 // Story content //
 var currentStoryNode = 1;
 
+function gameStartUp(){
+    //clear previous buttons 
+    buttonContainer.innerHTML = ""
+
+    //Generate new buttons 
+    var buttonHTML = 
+    `<div id="button-container" class="fade">
+            <button class="button"></button>
+            <button class="button"></button>
+            <button class="button"></button>
+            <button class="button"></button>
+    </div>`; 
+
+    return buttonContainer.innerHTML = buttonHTML;
+}
 
 function updateGameContent() {
     var currentStory = story.find(function(node) {
@@ -102,7 +115,7 @@ function updateGameContent() {
 var story = [
     {
         id: 1,
-        text: "You stand before the tower of the wizard. What do you do?",
+        text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field.",
         choices: [
           { text: "Open the door", nextNode: 2 },
           { text: "Look for a window", nextNode: 3 }
