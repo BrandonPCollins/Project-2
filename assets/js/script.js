@@ -27,14 +27,15 @@ function saveName(){
 
 /* Create Classes Buttons */ 
 
-function createClasses(){
-    return buttonContainer.innerText = 
-    `<div id="button-container" class="fade2">
-            <button class="button" onclick="setClass('knight'), startGame()">Knight</button>
-            <button class="button" onclick="setClass('thief'), startGame()">Thief</button>
-            <button class="button" onclick="setClass('wizard'), startGame()">Wizard</button>
-            <button class="button" onclick="setClass('goblin'), startGame()">Goblin</button>
-    </div>`; 
+function createClasses() {
+  var classes = ["Knight", "Thief", "Wizard", "Goblin"];
+  var buttonHTML = "";
+
+  for (var i = 0; i < classes.length; i++) {
+    buttonHTML += `<button class="button" onclick="setClass('${classes[i]}'); startGame()">${classes[i]}</button>`;
+  }
+
+  return buttonHTML;
 }
 
 function setClass(classtype){
@@ -48,16 +49,16 @@ function setClass(classtype){
 
 function startGame(){
     /* Create the option Buttons */  
-    textElement.innerText = `You stand before the Wizard's tower. Its five floors have been the bane of many an adventurer, but you are built differently.` 
+    textElement.innerHTML = `<p class="fade">You stand before the Wizard's tower. Its five floors have been the bane of many an adventurer, but you are built differently.</p>` 
 
     if(playerClass === 'knight'){
-        textElement.innerText += `\n\nYou know upon reaching the top that the legendary tale of the knight Ser ${playerName} will live forever.`
+        textElement.innerHTML += `\n\n<p class="fade">You know upon reaching the top that the legendary tale of the knight Ser ${playerName} will live forever.</p>`
     }else if (playerClass === 'thief'){
-        textElement.innerText += '\n\nU R A THIEF ' 
+        textElement.innerHTML += '\n\nU R A THIEF ' 
     }else if (playerClass === 'wizard'){
-        textElement.innerText += '\n\nU R A WIZARD ' 
+        textElement.innerHTML += '\n\nU R A WIZARD ' 
     }else if (playerClass === 'goblin'){
-        textElement.innerText += '\n\nU R A GOBBO' 
+        textElement.innerHTML += '\n\nU R A GOBBO' 
     }
 
     //clear previous buttons 
@@ -66,7 +67,7 @@ function startGame(){
 
     var button = document.createElement("button")
     button.textContent = "Boldly go where none have gone before!"
-    button.className  = "button"
+    button.classList.add("button", "fade");
     button.onclick = () => {
         gameStartUp();
         updateGameContent();
@@ -78,37 +79,53 @@ function startGame(){
 // Story content //
 var currentStoryNode = 1;
 
-function gameStartUp(){
-    //clear previous buttons 
-    buttonContainer.innerHTML = ""
+function gameStartUp() {
+  // Clear previous buttons 
+  buttonContainer.innerHTML = "";
 
-    //Generate new buttons 
-    var buttonHTML = 
-    `<div id="button-container" class="fade">
-            <button class="button"></button>
-            <button class="button"></button>
-            <button class="button"></button>
-            <button class="button"></button>
-    </div>`; 
+  // Generate new buttons 
+  var buttonHTML = `
+    <div id="button1">
+      <button class="button" class = "fade2"></button>
+    </div>
+    <div id="button2">
+      <button class="button"></button>
+    </div>
+    <div id="button3">
+      <button class="button"></button>
+    </div>
+    <div id="button4">
+      <button class="button"></button>
+    </div>
+  `;
 
-    return buttonContainer.innerHTML = buttonHTML;
+  buttonContainer.innerHTML = buttonHTML;
 }
 
 function updateGameContent() {
-    var currentStory = story.find(function(node) {
-      return node.id === currentStoryNode;
-    });
-  
-    var storyTextElement = document.getElementById("intro");
-    storyTextElement.innerText = currentStory.text;
-  
-    var choicesContainer = document.getElementById("button-container");
-    var choiceButtons = choicesContainer.getElementsByTagName("button");
-  
-    for (var i = 0; i < currentStory.choices.length; i++) {
-      choiceButtons[i].innerText = currentStory.choices[i].text;
-    }
+  var currentStory = story.find(function(node) {
+    return node.id === currentStoryNode;
+  });
+
+  var storyTextElement = document.getElementById("intro");
+  storyTextElement.innerHTML = currentStory.text;
+
+  var choicesContainer = document.getElementById("button-container");
+
+  // Hide all button divs initially
+  for (var i = 1; i <= 4; i++) {
+    var buttonDiv = document.getElementById("button" + i);
+    buttonDiv.style.display = "none";
   }
+
+  // Display buttons for available choices
+  for (var i = 0; i < currentStory.choices.length; i++) {
+    var buttonDiv = document.getElementById("button" + (i + 1));
+    var button = buttonDiv.querySelector("button");
+    button.innerText = currentStory.choices[i].text;
+    buttonDiv.style.display = "block";
+  }
+}
 
 
 
