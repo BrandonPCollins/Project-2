@@ -10,6 +10,13 @@ const buttonContainer = document.getElementById('button-container');
 
 function saveName() {
   playerName = document.getElementById("fname").value;
+
+  // Error message if player does not enter a name
+  if (playerName === '') {
+      alert("Cute, but no traveller with no name shall enter my Tower!");
+      return;
+  }
+
   console.log(playerName);
 
   let wrongName = playerName.slice(1);
