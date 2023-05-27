@@ -1,29 +1,25 @@
-console.log("Connected")
+console.log("Connected");
 
 /* Player Name */
 
 let playerName = [];
-
 let playerClass = [];
 
 const textElement = document.getElementById('intro');
 const buttonContainer = document.getElementById('button-container');
 
-
 function saveName() {
   playerName = document.getElementById("fname").value;
-  console.log(playerName)
-  // document.GetElementById("intro").innerHTML = "Welcome " input ; 
+  console.log(playerName);
 
   let wrongName = playerName.slice(1);
 
   document.getElementById("intro").innerHTML = `<p class="fade">Hello ${playerName}.</p>`
     + `<p class="fade2">Hmm, yes I do believe I've heard of a ${playerName}. Definitely a something-${wrongName}</p>`
-    + `<p class="fade2">As I pondered my orb it foretold of your coming. It also told me you were a warrior of some repute. Remind me, of which school do you hail?</p>`;
+    + `<p class="fade2">As I pondered my orb, it foretold of your coming. It also told me you were a warrior of some repute. Remind me, of which school do you hail?</p>`;
 
   document.getElementById("button-container").innerHTML = createClasses();
 }
-
 
 /* Create Classes Buttons */
 
@@ -39,13 +35,9 @@ function createClasses() {
 }
 
 function setClass(classtype) {
-  playerClass = classtype
-
-  console.log(playerClass)
+  playerClass = classtype;
+  console.log(playerClass);
 }
-
-
-// /* Stuff */ 
 
 function startGame() {
   // Create the option Buttons
@@ -73,36 +65,7 @@ function startGame() {
   buttonContainer.appendChild(button);
 }
 
-
-// Story content //
 var currentStoryNode = 1;
-
-function startGame() {
-  // Create the option Buttons
-  textElement.innerHTML = `<p class="fade">You stand before the Wizard's tower. Its five floors have been the bane of many an adventurer, but you are built differently.</p>`;
-
-  if (playerClass === 'Knight') {
-    textElement.innerHTML += `\n\n<p class="fade">You know upon reaching the top that the legendary tale of the knight Ser ${playerName} will live forever.</p>`;
-  } else if (playerClass === 'Thief') {
-    textElement.innerHTML += '\n\nU R A THIEF';
-  } else if (playerClass === 'Wizard') {
-    textElement.innerHTML += '\n\nU R A WIZARD';
-  } else if (playerClass === 'Goblin') {
-    textElement.innerHTML += '\n\nU R A GOBBO';
-  }
-
-  // Clear previous buttons
-  buttonContainer.innerHTML = '';
-
-  var button = document.createElement('button');
-  button.textContent = "Boldly go where none have gone before!";
-  button.classList.add('button', 'fade');
-  button.onclick = function() {
-    gameStartUp();
-    updateGameContent();
-  };
-  buttonContainer.appendChild(button);
-}
 
 function updateGameContent() {
   var currentStory = story.find(function (node) {
@@ -112,24 +75,23 @@ function updateGameContent() {
   var storyTextElement = document.getElementById("intro");
   storyTextElement.innerHTML = currentStory.text;
 
-  var choicesContainer = document.getElementById("button-container");
-
-  // Hide all button divs initially
-  for (var i = 1; i <= 4; i++) {
-    var buttonDiv = document.getElementById("button" + i);
-    buttonDiv.style.display = "none";
-  }
+  // Clear previous buttons
+  buttonContainer.innerHTML = '';
 
   // Display buttons for available choices
   for (var i = 0; i < currentStory.choices.length; i++) {
-    var buttonDiv = document.getElementById("button" + (i + 1));
-    var button = buttonDiv.querySelector("button");
-    button.innerText = currentStory.choices[i].text;
-    buttonDiv.style.display = "block";
+    var choice = currentStory.choices[i];
+    var button = document.createElement('button');
+    button.textContent = choice.text;
+    button.classList.add('button');
+    button.onclick = (function (choiceIndex) {
+      return function () {
+        choose(choiceIndex);
+      };
+    })(i);
+    buttonContainer.appendChild(button);
   }
 }
-
-
 
 var story = [
   {
@@ -155,8 +117,8 @@ var story = [
       { text: "Go back to sleep", nextNode: 6 },
       { text: "Search the room", nextNode: 7 }
     ]
-  },
-]
+  }
+];
 
 function choose(choiceIndex) {
   var currentStory = story.find(function (node) {
@@ -172,9 +134,4 @@ function choose(choiceIndex) {
   }
 }
 
-// 
-
-/*
 Math.floor(Math.random() * 10 ); 
-
-*/ 
