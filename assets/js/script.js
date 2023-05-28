@@ -8,6 +8,7 @@ let playerHealth = 3;
 
 const textElement = document.getElementById('intro');
 const buttonContainer = document.getElementById('button-container');
+const healthProgress = document.getElementById('health-progress');
 
 function saveName() {
   playerName = document.getElementById("fname").value;
@@ -127,13 +128,68 @@ function updateGameContent() {
   }
 }
 
+//Damaging Player Health // 
+
+function damagePlayerHealth(amount) {
+  playerHealth -= amount;
+  if (playerHealth <= 0) {
+    //Write game over code here 
+  }
+}
+
+function updateHealthBar() {
+  healthProgress.innerHTML = `<p>${playerHealth} / 3</p>`;
+  healthProgress.style.width = `${(playerHealth / 3) * 100}%`;
+}
+
+updateHealthBar(); // Update the health bar initially
+
+
+
+// Story Nodes //
+
+
+// Function for controlling options // 
+function choose(choiceIndex) {
+  var currentStory = story.find(function (node) {
+    return node.id === currentStoryNode;
+  });
+
+  if (choiceIndex >= 0 && choiceIndex < currentStory.choices.length) {
+    var nextNode = currentStory.choices[choiceIndex].nextNode;
+
+    // This damages the players health // 
+    var damage = currentStory.choices[choiceIndex].damage; 
+    if (damage) {
+      if(damage){
+        if (damage === 'kill')
+        playerHealth = 0; 
+      } else {
+        damagePlayerHealth(damage); 
+      }
+    }
+
+    currentStoryNode = nextNode;
+
+    // Update the game content
+    updateGameContent();
+
+    //Update the Players Health
+    updateHealthBar(); 
+  }
+}
+
+
+
 var story = [
   {
     id: 1,
     text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field.",
     choices: [
       { text: "Open the door", nextNode: 2 },
-      { text: "Look for a window", nextNode: 3 }
+      { text: "Look for a window", nextNode: 3 },
+      { text: "Look for a window", nextNode: 3 },
+      { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
     ]
   },
   {
@@ -151,19 +207,13 @@ var story = [
       { text: "Go back to sleep", nextNode: 6 },
       { text: "Search the room", nextNode: 7 }
     ]
+  },
+  {
+    id: 'wallDeath',
+    text: "BZzzzt! You're dead",
+    choices: [
+      { text: "Go back to sleep", nextNode: 6 },
+      { text: "Search the room", nextNode: 7 }
+    ]
   }
 ];
-
-function choose(choiceIndex) {
-  var currentStory = story.find(function (node) {
-    return node.id === currentStoryNode;
-  });
-
-  if (choiceIndex >= 0 && choiceIndex < currentStory.choices.length) {
-    var nextNode = currentStory.choices[choiceIndex].nextNode;
-    currentStoryNode = nextNode;
-
-    // Update the game content
-    updateGameContent();
-  }
-}
