@@ -162,8 +162,7 @@ function choose(choiceIndex) {
     // This damages the players health // 
     var damage = currentStory.choices[choiceIndex].damage; 
     if (damage) {
-      if(damage){
-        if (damage === 'kill')
+      if (damage === 'kill') {
         playerHealth = 0; 
       } else {
         damagePlayerHealth(damage); 
@@ -187,7 +186,7 @@ var story = [
     id: 1,
     text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field.",
     choices: [
-      { text: "Open the door", nextNode: 2 },
+      { text: "Open the door", nextNode: 2, damage: 1 },
       { text: "Look for a window", nextNode: 3 },
       { text: "Look for a window", nextNode: 3 },
       { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
