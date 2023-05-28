@@ -173,7 +173,7 @@ body {
     transition: width 0.5s ease; /* Adding transition for smooth movement */
   }
   
-  #health-progress p {
+  #health-text {
     /* Text styling */ 
     text-align: center;
     text-justify: center;
@@ -181,6 +181,7 @@ body {
     max-width: 33%;
     max-height: 80%;
     font-size: 2em;
+    background-color: transparent; 
   }
 
 @keyframes slidein {

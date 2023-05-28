@@ -9,6 +9,7 @@ let playerHealth = 3;
 const textElement = document.getElementById('intro');
 const buttonContainer = document.getElementById('button-container');
 const healthProgress = document.getElementById('health-progress');
+const healthText = document.getElementById('health-text');
 
 function saveName() {
   playerName = document.getElementById("fname").value;
@@ -95,7 +96,7 @@ function startGame() {
 
   // Update health bar progress
   var healthProgress = document.getElementById('health-progress');
-  healthProgress.innerHTML = `<p>${playerHealth} / 3</p>`;
+  healthText.innerHTML = `<p>${playerHealth} / 3</p>`;
 
   healthProgress.style.width = playerHealth + 3;
 }
@@ -138,7 +139,7 @@ function damagePlayerHealth(amount) {
 }
 
 function updateHealthBar() {
-  healthProgress.innerHTML = `<p>${playerHealth} / 3</p>`;
+  healthText.innerHTML = `<p>${playerHealth} / 3</p>`;
   healthProgress.style.width = `${(playerHealth / 3) * 100}%`;
 }
 
