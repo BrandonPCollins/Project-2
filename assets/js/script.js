@@ -4,6 +4,7 @@ console.log("Connected");
 
 let playerName = [];
 let playerClass = [];
+let playerHealth = 3; 
 
 const textElement = document.getElementById('intro');
 const buttonContainer = document.getElementById('button-container');
@@ -86,6 +87,16 @@ function startGame() {
     updateGameContent();
   };
   buttonContainer.appendChild(button);
+
+  // Show the health bar
+  var healthBar = document.getElementById('health-bar');
+  healthBar.style.display = 'block';  
+
+  // Update health bar progress
+  var healthProgress = document.getElementById('health-progress');
+  healthProgress.innerHTML = `<p>${playerHealth} / 3</p>`;
+
+  healthProgress.style.width = playerHealth + 3;
 }
 
 var currentStoryNode = 1;
@@ -156,5 +167,3 @@ function choose(choiceIndex) {
     updateGameContent();
   }
 }
-
-Math.floor(Math.random() * 10 ); 
