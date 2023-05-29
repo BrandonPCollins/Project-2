@@ -126,14 +126,16 @@ function updateGameContent() {
       };
     })(i);
     
-    //Reset Player Health on Click because I can't get it to work otherwise 
-    if(button.textContent === "Try Again?"){
-      button.onclick = function () {
-        resetGame();
-      };
-    }
-
     buttonContainer.appendChild(button);
+  }
+
+}
+
+function healPlayerHealth(amount){
+  playerHealth += amount
+
+  if (playerHealth < 3) {
+    playerHealth = 3;
   }
 
 }
@@ -145,10 +147,6 @@ function damagePlayerHealth(amount) {
 
   if (playerHealth < 0) {
     playerHealth = 0;
-  }
-
-  if (playerHealth <= 0) {
-    //Write game over code here 
   }
 }
 
@@ -195,6 +193,12 @@ function choose(choiceIndex) {
       }
     }
 
+
+    // This heals the players health // 
+    var heal = currentStory.choices[choiceIndex].heal;
+    if (heal) {
+      healPlayerHealth(heal);
+    }
     currentStoryNode = nextNode;
 
     // Update the game content
@@ -210,7 +214,7 @@ function choose(choiceIndex) {
 var story = [
   {
     id: 1,
-    text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field.",
+    text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field, the floor coated with .",
     choices: [
       { text: "Open the door", nextNode: 2, damage: 3 },
       { text: "Look for a window", nextNode: 3 },
@@ -240,16 +244,17 @@ var story = [
     choices: [
       {
         text: "Try Again?",
-        nextNode: 1,
+        nextNode: 1, heal: 3 
       },
-    ]  },
+    ]
+    },
   {
     id: 'gameOver',
     text: "With this choice, you have fallen to the Wizard's tower.",
     choices: [
       {
         text: "Try Again?",
-        nextNode: 1,
+        nextNode: 1, heal: 3 
       },
     ]
   }
