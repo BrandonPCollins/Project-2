@@ -125,14 +125,28 @@ function updateGameContent() {
         choose(choiceIndex);
       };
     })(i);
+    
+    //Reset Player Health on Click because I can't get it to work otherwise 
+    if(button.textContent === "Try Again?"){
+      button.onclick = function () {
+        resetGame();
+      };
+    }
+
     buttonContainer.appendChild(button);
   }
+
 }
 
 //Damaging Player Health // 
 
 function damagePlayerHealth(amount) {
   playerHealth -= amount;
+
+  if (playerHealth < 0) {
+    playerHealth = 0;
+  }
+
   if (playerHealth <= 0) {
     //Write game over code here 
   }
@@ -141,6 +155,15 @@ function damagePlayerHealth(amount) {
 function updateHealthBar() {
   healthText.innerHTML = `<p>${playerHealth} / 3</p>`;
   healthProgress.style.width = `${(playerHealth / 3) * 100}%`;
+}
+
+// Reset Game after game over// 
+
+function resetGame() {
+  playerHealth = 3;
+  updateHealthBar(); 
+  currentStoryNode = 1;
+  updateGameContent();
 }
 
 updateHealthBar(); // Update the health bar initially
@@ -166,6 +189,9 @@ function choose(choiceIndex) {
         playerHealth = 0; 
       } else {
         damagePlayerHealth(damage); 
+        if (playerHealth <= 0) {
+          nextNode = 'gameOver'; 
+        }
       }
     }
 
@@ -186,7 +212,7 @@ var story = [
     id: 1,
     text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field.",
     choices: [
-      { text: "Open the door", nextNode: 2, damage: 1 },
+      { text: "Open the door", nextNode: 2, damage: 3 },
       { text: "Look for a window", nextNode: 3 },
       { text: "Look for a window", nextNode: 3 },
       { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
@@ -210,10 +236,22 @@ var story = [
   },
   {
     id: 'wallDeath',
-    text: "BZzzzt! You're dead",
+    text: "You spring full force at the blue sheen blocking the path to the stairs. Unfortunately upon immediate contact with the warding spell you turn to ash.",
     choices: [
-      { text: "Go back to sleep", nextNode: 6 },
-      { text: "Search the room", nextNode: 7 }
+      {
+        text: "Try Again?",
+        nextNode: 1,
+      },
+    ]  },
+  {
+    id: 'gameOver',
+    text: "With this choice, you have fallen to the Wizard's tower.",
+    choices: [
+      {
+        text: "Try Again?",
+        nextNode: 1,
+      },
     ]
   }
+  
 ];
