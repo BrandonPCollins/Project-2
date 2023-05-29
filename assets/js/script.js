@@ -239,7 +239,8 @@ var story = [
     text: "The bookshelf is stocked with books and vials, what will you do?",
     choices: [
       { text: "Drink the fizzy green vial", nextNode: 3, damage: 1, repeatable: false },
-      { text: "Drink the purple vial", nextNode: 3 }
+      { text: "Drink the purple vial", nextNode: 3, damage: 1, repeatable: false },
+      { text: "Riffle through the books", nextNode: 4 }
     ]
   },
   {
@@ -249,7 +250,13 @@ var story = [
       { text: "That was stupid...", nextNode: 2 }
     ]
   },
-
+  {
+    id: 4,
+    text: "You feel queasy and suddenly your stomach is racked with pain. That'll teach you not to drink strange liquids left out in a wizard's house.",
+    choices: [
+      { text: "That was stupid...", nextNode: 2 }
+    ]
+  },
   {
     id: 'wallDeath',
     text: "You spring full force at the blue sheen blocking the path to the stairs. Unfortunately upon immediate contact with the warding spell you turn to ash.",
