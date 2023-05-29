@@ -117,6 +117,7 @@ function updateGameContent() {
   // Display buttons for available choices
   for (var i = 0; i < currentStory.choices.length; i++) {
     var choice = currentStory.choices[i];
+    
     var button = document.createElement('button');
     button.textContent = choice.text;
     button.classList.add('button');
@@ -134,7 +135,7 @@ function updateGameContent() {
 function healPlayerHealth(amount){
   playerHealth += amount
 
-  if (playerHealth < 3) {
+  if (playerHealth > 3) {
     playerHealth = 3;
   }
 
@@ -212,13 +213,14 @@ function choose(choiceIndex) {
 
 
 var story = [
+  // First Floor//
   {
     id: 1,
     text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field, the floor coated with .",
     choices: [
       { text: "Open the door", nextNode: 2, damage: 3 },
       { text: "Look for a window", nextNode: 3 },
-      { text: "Look for a window", nextNode: 3 },
+      { text: "Use your own magic on this pitiful warding spell", nextNode: 'floor-two' },
       { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
     ]
   },
@@ -247,7 +249,22 @@ var story = [
         nextNode: 1, heal: 3 
       },
     ]
-    },
+  },
+
+  //Second Floor//
+  {
+    id: 'floor-two',
+    text: "Having dealt with the wizard's ward you advance to the next floor.",
+    choices: [
+      {
+        text: "Try Again?",
+        nextNode: 1, heal: 3 
+      },
+    ]
+  },
+
+
+  //Generic Game Over// 
   {
     id: 'gameOver',
     text: "With this choice, you have fallen to the Wizard's tower.",
