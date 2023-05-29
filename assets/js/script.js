@@ -117,19 +117,21 @@ function updateGameContent() {
   // Display buttons for available choices
   for (var i = 0; i < currentStory.choices.length; i++) {
     var choice = currentStory.choices[i];
-    
-    var button = document.createElement('button');
-    button.textContent = choice.text;
-    button.classList.add('button');
-    button.onclick = (function (choiceIndex) {
-      return function () {
-        choose(choiceIndex);
-      };
-    })(i);
-    
-    buttonContainer.appendChild(button);
-  }
 
+    // Check if require a specific player class
+    if (!choice.playerClass || choice.playerClass === playerClass) {
+      var button = document.createElement('button');
+      button.textContent = choice.text;
+      button.classList.add('button');
+      button.onclick = (function (choiceIndex) {
+        return function () {
+          choose(choiceIndex);
+        };
+      })(i);
+      
+      buttonContainer.appendChild(button);
+    }
+  }
 }
 
 function healPlayerHealth(amount){
@@ -220,7 +222,7 @@ var story = [
     choices: [
       { text: "Open the door", nextNode: 2, damage: 3 },
       { text: "Look for a window", nextNode: 3 },
-      { text: "Use your own magic on this pitiful warding spell", nextNode: 'floor-two' },
+      { text: "Use your own magic on this pitiful warding spell", nextNode: 'floor-two', playerClass: 'Wizard' },
       { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
     ]
   },
