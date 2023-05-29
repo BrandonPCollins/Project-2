@@ -118,8 +118,8 @@ function updateGameContent() {
   for (var i = 0; i < currentStory.choices.length; i++) {
     var choice = currentStory.choices[i];
 
-    // Check if require a specific player class
-    if (!choice.playerClass || choice.playerClass === playerClass) {
+    // Check if require a specific player class & if choice should be repeatable 
+    if ((!choice.playerClass || choice.playerClass === playerClass) && (!choice.completed || choice.repeatable || !choice.hasOwnProperty('repeatable'))) {
       var button = document.createElement('button');
       button.textContent = choice.text;
       button.classList.add('button');
@@ -183,6 +183,14 @@ function choose(choiceIndex) {
   if (choiceIndex >= 0 && choiceIndex < currentStory.choices.length) {
     var nextNode = currentStory.choices[choiceIndex].nextNode;
 
+    var chosenChoice = currentStory.choices[choiceIndex];
+
+    if (!chosenChoice.repeatable) {
+      // Mark the choice as completed if not repeatable
+      chosenChoice.completed = true;
+    }
+
+
     // This damages the players health // 
     var damage = currentStory.choices[choiceIndex].damage; 
     if (damage) {
@@ -230,8 +238,8 @@ var story = [
     id: 2,
     text: "The bookshelf is stocked with books and vials, what will you do?",
     choices: [
-      { text: "Drink the fizzy green vial", nextNode: 3, damage: 1, completed: false },
-      { text: "Go right", nextNode: 5 }
+      { text: "Drink the fizzy green vial", nextNode: 3, damage: 1, repeatable: false },
+      { text: "Drink the purple vial", nextNode: 3 }
     ]
   },
   {
