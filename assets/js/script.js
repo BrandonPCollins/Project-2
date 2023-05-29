@@ -220,7 +220,7 @@ var story = [
     id: 1,
     text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field, the floor coated with .",
     choices: [
-      { text: "Open the door", nextNode: 2, damage: 3 },
+      { text: "Investigate the bookshelf", nextNode: 2, },
       { text: "Look for a window", nextNode: 3 },
       { text: "Use your own magic on this pitiful warding spell", nextNode: 'floor-two', playerClass: 'Wizard' },
       { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
@@ -228,20 +228,20 @@ var story = [
   },
   {
     id: 2,
-    text: "You open the door and find yourself in a dark corridor. Which way do you go?",
+    text: "The bookshelf is stocked with books and vials, what will you do?",
     choices: [
-      { text: "Go left", nextNode: 4 },
+      { text: "Drink the fizzy green vial", nextNode: 3, damage: 1, completed: false },
       { text: "Go right", nextNode: 5 }
     ]
   },
   {
     id: 3,
-    text: "You look for a window, but it's boarded up. What do you do next?",
+    text: "You feel queasy and suddenly your stomach is racked with pain. That'll teach you not to drink strange liquids left out in a wizard's house.",
     choices: [
-      { text: "Go back to sleep", nextNode: 6 },
-      { text: "Search the room", nextNode: 7 }
+      { text: "That was stupid...", nextNode: 2 }
     ]
   },
+
   {
     id: 'wallDeath',
     text: "You spring full force at the blue sheen blocking the path to the stairs. Unfortunately upon immediate contact with the warding spell you turn to ash.",
