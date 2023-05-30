@@ -196,3 +196,39 @@ body {
 .slide {
     animation: slidein 1s ease;
 }
+
+
+/* Media queries */
+
+/* For larger to medium screens size from 1200px wide and down */
+@media screen and (max-width: 1200px) {
+}
+
+/* For medium screen sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+
+    #hero-image{
+        height: 100%;
+        display: absolute;
+        position: relative;
+    }
+    
+    #title{
+        max-width: 100%;
+    }
+
+}
+
+/* For small screen sizes below 800px width */
+@media screen and (max-width: 800px) {
+
+    #hero-image{
+        height: 100%;
+        display: absolute;
+        position: relative;
+    }
+
+    #title{
+        max-width: 100%;
+    }
+}
