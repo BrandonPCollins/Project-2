@@ -72,11 +72,11 @@ function startGame() {
   if (playerClass === 'Knight') {
     textElement.innerHTML += `\n\n<p class="fade">You know upon reaching the top that the legendary tale of the knight Ser ${playerName} will live forever.</p>`;
   } else if (playerClass === 'Thief') {
-    textElement.innerHTML += '\n\nU R A THIEF';
+    textElement.innerHTML += '\n\n<p class="fade">You have heard of the treasures that lie atop this legendary tower, and with the plunder you find it will change your life around!</p>';
   } else if (playerClass === 'Wizard') {
-    textElement.innerHTML += '\n\nU R A WIZARD';
+    textElement.innerHTML += '\n\n<p class="fade">The wizard of this tower has horded knowledge and wizard for far too long. You will redistribute his scrolls so that no longer will 99% of the spells be horded by 1% of the wizards.</p>';
   } else if (playerClass === 'Goblin') {
-    textElement.innerHTML += '\n\nU R A GOBBO';
+    textElement.innerHTML += '\n\n<p class="fade">As a Goblin of the Knee-Biter tribe, you have been tasked with murdering the funny hat magic man and bringing back his beard as trophy! Let the world fear the green!</p>';
   }
 
   // Clear previous buttons
@@ -230,8 +230,9 @@ var story = [
     choices: [
       { text: "Investigate the bookshelf", nextNode: 2, },
       { text: "Look for a window", nextNode: 3 },
-      { text: "Use your own magic on this pitiful warding spell", nextNode: 'floor-two', playerClass: 'Wizard' },
-      { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' }
+      { text: "Use your own magic on this pitiful warding spell", nextNode: 'wizardSkip', playerClass: 'Wizard' },
+      { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' },
+      { text: "Bite off your toes", nextNode: 'goblinToes1', playerClass: 'Goblin', damage: 1, repeatable: false }
     ]
   },
   {
@@ -252,7 +253,7 @@ var story = [
   },
   {
     id: 4,
-    text: "You feel queasy and suddenly your stomach is racked with pain. That'll teach you not to drink strange liquids left out in a wizard's house.",
+    text: " In the books you .",
     choices: [
       { text: "That was stupid...", nextNode: 2 }
     ]
@@ -265,6 +266,23 @@ var story = [
         text: "Try Again?",
         nextNode: 1, heal: 3 
       },
+    ]
+  },
+  {
+    id: 'wizardSkip',
+    text: "This ward is of little consequence to a mage of your might!",
+    choices: [
+      {
+        text: "Onto the next floor!",
+        nextNode: 'floor-two' 
+      },
+    ]
+  },
+  {
+    id: 'goblinToes1',
+    text: "Goblin toes itchy. Be better if you had none. It hurts but at least your stomach is full now.",
+    choices: [
+      { text: "Yum yum!", nextNode: 1, heal: 1, repeatable: false }
     ]
   },
 
