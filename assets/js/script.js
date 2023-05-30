@@ -229,7 +229,6 @@ var story = [
     text: "You enter the ground floor of the wizard's tower. The staircase is blocked by a translucent blue field, the floor coated with .",
     choices: [
       { text: "Investigate the bookshelf", nextNode: 2, },
-      { text: "Look for a window", nextNode: 3 },
       { text: "Use your own magic on this pitiful warding spell", nextNode: 'wizardSkip', playerClass: 'Wizard' },
       { text: "Sprint at that blue wall, nothing holds you back!", nextNode: 'wallDeath', damage: 'kill' },
       { text: "Bite off your toes", nextNode: 'goblinToes1', playerClass: 'Goblin', damage: 1, repeatable: false }
@@ -253,9 +252,9 @@ var story = [
   },
   {
     id: 4,
-    text: " In the books you .",
+    text: " In the books you find a glyph that you recognise as the Ward of McGuffin, a powerful mage who was said to be able to overcome any triviality. Upon touching it the Glyph shines and the blue sheen around the doorway fades, allowing you access to the next floor of the tower..",
     choices: [
-      { text: "That was stupid...", nextNode: 2 }
+      { text: "Onwards and Upwards!", nextNode: 'floor-two' }
     ]
   },
   {
@@ -289,14 +288,41 @@ var story = [
   //Second Floor//
   {
     id: 'floor-two',
-    text: "Having dealt with the wizard's ward you advance to the next floor.",
+    text: "Having dealt with the wizard's ward you advance to the next floor by ascending a winding staircase. Before you now sits two doors, and before each door a man in red and blue livery respectively. <br>'None shall pass!' speaks the one in Red. 'Unless you answer our riddle!' follows his twin in blue.",
     choices: [
       {
-        text: "Try Again?",
-        nextNode: 1, heal: 3 
-      },
+        text: "Right, let's hear it.",
+        nextNode: 'floor-two1', heal: 3 
+      }
     ]
   },
+  {
+    id: 'floor-two1',
+    text: "'One of these doors leads to certain death, the other to the next floor.' a voice speaks into your mind, that you know to be the Wizard of this tower. <br> 'You may ask one question to discern your option, but know that one guard always lies, and the other always tells the truth!'",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'floor-twoknight', playerClass: 'Knight'
+      },
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'floor-twoknight'
+      }
+    ]
+  },
+  {
+    id: 'floor-twoKnight',
+    text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'floor-three'
+      }
+    ]
+  },
+
+  //Third Floor// 
+
 
 
   //Generic Game Over// 
