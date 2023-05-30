@@ -305,7 +305,7 @@ var story = [
         nextNode: 'floor-twoknight', playerClass: 'Knight'
       },
       {
-        text: "Riddles are dumb, and knights solve their problems with swords!",
+        text: "This is as far as Brandon has done so far :) Hopefully it will pass thank you!",
         nextNode: 'floor-twoknight'
       }
     ]
