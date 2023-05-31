@@ -309,11 +309,15 @@ var story = [
         nextNode: 'floor-twocorrect', playerClass: 'Thief'
       },
       {
-        text: "I ask the guard 'If I asked what door led to the next floor, which would the other guard point to?'",
-        nextNode: 'floor-twoknight'
+        text: "I'll ask 'If I asked what door led to the next floor, which would the other guard point to?'",
+        nextNode: 'floor-twocorrect'
       },
       {
         text: "I'll ask them to tell me which door is the wrong one!",
+        nextNode: 'floor-twowrong', damage: 'kill'
+      },
+      {
+        text: "I'll ask 'If I asked what door led to certain death, which would the other guard point to?'",
         nextNode: 'floor-twowrong', damage: 'kill'
       }
     ]
@@ -353,10 +357,10 @@ var story = [
   //Third Floor// 
   {
     id: 'floor-three',
-    text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
+    text: "You enter the third floor now",
     choices: [
       {
-        text: "Riddles are dumb, and knights solve their problems with swords!",
+        text: "This is as far as I've written so far D:!",
         nextNode: 'floor-three'
       }
     ]
