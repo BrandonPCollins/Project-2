@@ -305,8 +305,8 @@ var story = [
         nextNode: 'floor-twoknight', playerClass: 'Knight'
       },
       {
-        text: "This is as far as Brandon has done so far :) Hopefully it will pass thank you!",
-        nextNode: 'floor-twoknight'
+        text: "Every good rogue knows this one. 'If I asked what door would lead to freedom, what door would the other guard point to?'",
+        nextNode: 'floor-twocorrect', playerClass: 'Thief'
       }
     ]
   },
@@ -320,10 +320,65 @@ var story = [
       }
     ]
   },
+  {
+    id: 'floor-twocorrect',
+    text: "'One of these doors leads to certain death, the other to the next floor.' a voice speaks into your mind, that you know to be the Wizard of this tower. <br> 'You may ask one question to discern your option, but know that one guard always lies, and the other always tells the truth!'",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'floor-three'
+      },
+    ]
+  },
+
 
   //Third Floor// 
+  {
+    id: 'floor-three',
+    text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'floor-three'
+      }
+    ]
+  },
 
+  //Fourth Floor// 
+  {
+    id: 'floor-four',
+    text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'floor-three'
+      }
+    ]
+  },
 
+  //Fifth Floor// 
+  {
+    id: 'floor-five',
+    text: "You have reached the final floor of the Wizard's Tower, and before you, seated behind the an esoterica laden table, the Wizard gazes into his orb.",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'winNode'
+      }
+    ]
+  },
+
+  //Victory!// 
+  {
+    id: 'winNode',
+    text: "You have reached the final floor of the Wizard's Tower, and before you, seated behind the an esoterica laden table, the Wizard gazes into his orb.",
+    choices: [
+      {
+        text: "Riddles are dumb, and knights solve their problems with swords!",
+        nextNode: 'winNode'
+      }
+    ]
+  },
 
   //Generic Game Over// 
   {
