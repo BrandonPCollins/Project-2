@@ -6,17 +6,17 @@
 }
 
 body {
-    background-color: black; 
+    background-color: black;
     display: flex;
-} 
+}
 
 #hero-image {
     background-image: url(../images/nightsky.jpeg);
-    background-color: black; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    height: 100%; 
-    width: 100%; 
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
     position: fixed;
 }
 
@@ -24,15 +24,15 @@ body {
 
 #title {
     background-color: white;
-    border-style: solid; 
+    border-style: solid;
     border-color: black;
     border-width: 5px;
-    border-radius: 15px; 
+    border-radius: 15px;
     box-shadow: 0 0 100px 2px;
     padding: 1px 1px;
 
-    
-    /* Text styling */ 
+
+    /* Text styling */
     text-align: center;
     text-justify: center;
     margin: auto;
@@ -44,15 +44,15 @@ body {
 
 #intro {
     background-color: white;
-    border-style: solid; 
+    border-style: solid;
     border-color: black;
     border-width: 5px;
-    border-radius: 15px; 
+    border-radius: 15px;
     box-shadow: 10px 10px 5px 2px;
     padding: 1px 1px;
 
-    
-    /* Text styling */ 
+
+    /* Text styling */
     text-align: center;
     text-justify: center;
     margin: auto;
@@ -65,9 +65,7 @@ body {
     padding: 2% 10%;
 }
 
-#intro p {
-
-}
+#intro p {}
 
 #intro p::first-letter {
     font-family: cursive, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -75,8 +73,8 @@ body {
 }
 
 /* Wizard's Tower Logo Styling */
-#logo { 
-    display:block;
+#logo {
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 35%;
@@ -100,7 +98,7 @@ body {
     color: white;
 }
 
-/* Option Buttons */ 
+/* Option Buttons */
 
 #button-container {
     display: grid;
@@ -132,26 +130,39 @@ body {
 }
 
 
-/* Fade in text */ 
+/* Fade in text */
 
 @keyframes fadein {
-    0%{opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.fade{
-    animation: fadein 3s ;
+.fade {
+    animation: fadein 3s;
 
 }
 
 @keyframes fadein2 {
-    0%{opacity: 0;}
-    50%{opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.fade2{
-    animation: fadein2 3s ;
+.fade2 {
+    animation: fadein2 3s;
 }
 
 /* Health Bar CSS*/
@@ -163,18 +174,20 @@ body {
     width: 100%;
     height: 50px;
     background-color: red;
-    display: none; /* Hide Bar Until Called */
-  }
-  
-  #health-progress {
+    display: none;
+    /* Hide Bar Until Called */
+}
+
+#health-progress {
     width: 100%;
     height: 50px;
     background-color: green;
-    transition: width 0.5s ease; /* Adding transition for smooth movement */
-  }
-  
-  #health-text {
-    /* Text styling */ 
+    transition: width 0.5s ease;
+    /* Adding transition for smooth movement */
+}
+
+#health-text {
+    /* Text styling */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -182,15 +195,16 @@ body {
     text-align: center;
     font-size: 2em;
     background-color: transparent;
-    }
+}
 
 @keyframes slidein {
     0% {
         transform: translateX(-100%);
-      }
-      100% {
+    }
+
+    100% {
         transform: translateX(0);
-      }
+    }
 }
 
 .slide {
@@ -201,23 +215,22 @@ body {
 /* Media queries */
 
 /* For larger to medium screens size from 1200px wide and down */
-@media screen and (max-width: 1200px) {
-}
+@media screen and (max-width: 1200px) {}
 
 /* For medium screen sizes from 950px wide and down */
 @media screen and (max-width: 950px) {
 
-    #hero-image{
+    #hero-image {
         height: 100vh;
         display: absolute;
         position: relative;
     }
-    
-    #title{
+
+    #title {
         max-width: 66%;
     }
 
-    #intro{
+    #intro {
         max-width: 100%;
     }
 }
@@ -225,17 +238,17 @@ body {
 /* For small screen sizes below 800px width */
 @media screen and (max-width: 800px) {
 
-    #hero-image{
+    #hero-image {
         height: 100vh;
         display: absolute;
         position: fixed;
     }
 
-    #title{
+    #title {
         max-width: 100%;
     }
 
-    #intro{
+    #intro {
         max-width: 100%;
     }
 

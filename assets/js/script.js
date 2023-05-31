@@ -1,10 +1,8 @@
-console.log("Connected");
-
 /* Player Name */
 
 let playerName = [];
 let playerClass = [];
-let playerHealth = 3; 
+let playerHealth = 3;
 
 const textElement = document.getElementById('intro');
 const buttonContainer = document.getElementById('button-container');
@@ -15,15 +13,15 @@ function saveName() {
   playerName = document.getElementById("fname").value;
 
   // Error message if player does not enter a name
-  if (playerName === '') {
-      alert("Cute, but no traveller with no name shall enter my Tower!");
-      return;
+  if (playerName.trim() === '') {
+    alert("Cute, but no traveller with no name shall enter my Tower!");
+    return;
   }
 
   if (playerName.length <= 1) {
     alert("Your name can't just be one letter, just enter your name >:(");
     return;
-}
+  }
 
 
   console.log(playerName);
@@ -37,12 +35,11 @@ function saveName() {
   document.getElementById("button-container").innerHTML = createClasses();
 }
 
-/* Event Listener for the button */ 
-document.getElementById('fname').addEventListener('keydown', function(event) {
-  // Submit form on Enter key press 
+/* Event Listener for first name */
+document.getElementById('fname').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
-      event.preventDefault(); 
-      document.querySelector('button[type="submit"]').click(); 
+    event.preventDefault();
+    document.querySelector('button[type="submit"]').click();
   }
 });
 
@@ -92,7 +89,7 @@ function startGame() {
 
   // Show the health bar
   var healthBar = document.getElementById('health-bar');
-  healthBar.style.display = 'block';  
+  healthBar.style.display = 'block';
 
   // Update health bar progress
   var healthProgress = document.getElementById('health-progress');
@@ -101,7 +98,7 @@ function startGame() {
   healthProgress.style.width = playerHealth + 3;
 }
 
-var currentStoryNode = 1;
+const currentStoryNode = 1;
 
 function updateGameContent() {
   var currentStory = story.find(function (node) {
@@ -128,13 +125,13 @@ function updateGameContent() {
           choose(choiceIndex);
         };
       })(i);
-      
+
       buttonContainer.appendChild(button);
     }
   }
 }
 
-function healPlayerHealth(amount){
+function healPlayerHealth(amount) {
   playerHealth += amount
 
   if (playerHealth > 3) {
@@ -162,13 +159,10 @@ function updateHealthBar() {
 
 function resetGame() {
   playerHealth = 3;
-  updateHealthBar(); 
+  updateHealthBar();
   currentStoryNode = 1;
   updateGameContent();
 }
-
-updateHealthBar(); // Update the health bar initially
-
 
 
 // Story Nodes //
@@ -192,14 +186,14 @@ function choose(choiceIndex) {
 
 
     // This damages the players health // 
-    var damage = currentStory.choices[choiceIndex].damage; 
+    var damage = currentStory.choices[choiceIndex].damage;
     if (damage) {
       if (damage === 'kill') {
-        playerHealth = 0; 
+        playerHealth = 0;
       } else {
-        damagePlayerHealth(damage); 
+        damagePlayerHealth(damage);
         if (playerHealth <= 0) {
-          nextNode = 'gameOver'; 
+          nextNode = 'gameOver';
         }
       }
     }
@@ -216,13 +210,13 @@ function choose(choiceIndex) {
     updateGameContent();
 
     //Update the Players Health
-    updateHealthBar(); 
+    updateHealthBar();
   }
 }
 
 
 
-var story = [
+const story = [
   // First Floor//
   {
     id: 1,
@@ -263,7 +257,7 @@ var story = [
     choices: [
       {
         text: "Try Again?",
-        nextNode: 1, heal: 3 
+        nextNode: 1, heal: 3
       },
     ]
   },
@@ -273,7 +267,7 @@ var story = [
     choices: [
       {
         text: "Onto the next floor!",
-        nextNode: 'floor-two' 
+        nextNode: 'floor-two'
       },
     ]
   },
@@ -292,7 +286,7 @@ var story = [
     choices: [
       {
         text: "Right, let's hear it.",
-        nextNode: 'floor-two1', heal: 3 
+        nextNode: 'floor-two1'
       }
     ]
   },
@@ -348,7 +342,7 @@ var story = [
     choices: [
       {
         text: "Try Again?",
-        nextNode: 1, heal: 3 
+        nextNode: 1, heal: 3
       },
     ]
   },
@@ -409,9 +403,9 @@ var story = [
     choices: [
       {
         text: "Try Again?",
-        nextNode: 1, heal: 3 
+        nextNode: 1, heal: 3
       },
     ]
   }
-  
+
 ];
