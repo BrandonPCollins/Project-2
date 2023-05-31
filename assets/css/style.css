@@ -17,7 +17,7 @@ body {
     background-size: cover; 
     height: 100%; 
     width: 100%; 
-    position: relative;
+    position: fixed;
 }
 
 /* Style the options box  */
@@ -228,7 +228,7 @@ body {
     #hero-image{
         height: 100vh;
         display: absolute;
-        position: relative;
+        position: fixed;
     }
 
     #title{
@@ -237,5 +237,9 @@ body {
 
     #intro{
         max-width: 100%;
+    }
+
+    .button {
+        width: 200px;
     }
 }
