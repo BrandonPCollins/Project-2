@@ -311,6 +311,10 @@ var story = [
       {
         text: "I ask the guard 'If I asked what door led to the next floor, which would the other guard point to?'",
         nextNode: 'floor-twoknight'
+      },
+      {
+        text: "I'll ask them to tell me which door is the wrong one!",
+        nextNode: 'floor-twowrong', damage: 'kill'
       }
     ]
   },
@@ -330,7 +334,17 @@ var story = [
     choices: [
       {
         text: "You confidently walk through the door and to the next floor!",
-        nextNode: 'floor-three'
+        nextNode: 'floor-three,'
+      },
+    ]
+  },
+  {
+    id: 'floor-twowrong',
+    text: "You confidently walk thorugh the door you believe to be the correct one, and then immediately fall to your death and are devoured by Owl-Bears.",
+    choices: [
+      {
+        text: "Try Again?",
+        nextNode: 1, heal: 3 
       },
     ]
   },
