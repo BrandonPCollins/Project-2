@@ -4,6 +4,8 @@ let playerName = [];
 let playerClass = [];
 let playerHealth = 3;
 
+let winCount = 0; 
+
 var currentStoryNode = 1;
 
 const textElement = document.getElementById('intro');
@@ -105,6 +107,13 @@ function startGame() {
 }
 
 function updateGameContent() {
+
+
+  if (currentStoryNode === 'win') {
+    winGame(); // Call the winGame function directly for the win node to prevent errors 
+    return;
+  }
+
   var currentStory = story.find(function (node) {
     return node.id === currentStoryNode;
   });
@@ -133,6 +142,20 @@ function updateGameContent() {
       buttonContainer.appendChild(button);
     }
   }
+}
+
+//Tracks the number of player victories 
+function winGame() {
+  winCount++; // Increment the win count
+
+  // Update the win count in the win node text
+  document.getElementById("intro").innerHTML = `<p class="fade">Congratulations, ${playerName}!</p>`
+    + `<p class="fade2">You have successfully reached the top of the wizard's tower and defeated the evil wizard.</p>`
+    + `<p class="fade2">You have beaten the game ${winCount} time(s)!</p>`
+    + `<p class="fade2">Will you dare to venture forth once more?</p>`;
+
+  // Display the reset button
+  buttonContainer.innerHTML = `<button class="button" onclick="resetGame()">Play Again</button>`;
 }
 
 function resetGame() {
@@ -418,19 +441,19 @@ const story = [
     choices: [
       {
         text: "You win!",
-        nextNode: 'winNode'
+        nextNode: 'win'
       }
     ]
   },
 
-  //Victory!// 
+  //Victory! Calls the winGame action
   {
-    id: 'winNode',
-    text: "Congratulations, you have conquered the Wizard's tower!",
+    id: 'win',
+    text: "You beat that wizard up!",
     choices: [
       {
-        text: "Play Again?",
-        action: resetGame      
+        text: "You win!",
+        action: winGame
       }
     ]
   },
