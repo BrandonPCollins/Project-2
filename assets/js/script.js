@@ -375,10 +375,6 @@ const story = [
         nextNode: 'floor-twoknight', playerClass: 'Knight'
       },
       {
-        text: "Every good rogue knows this one. 'What door would the other guard point to if I asked him for the right one?'",
-        nextNode: 'floor-twocorrect', playerClass: 'Thief'
-      },
-      {
         text: "I'll ask 'If I asked what door led to the next floor, which would the other guard point to?'",
         nextNode: 'floor-twocorrect'
       },
@@ -488,11 +484,36 @@ const story = [
     text: "You have reached the final floor of the Wizard's Tower, and before you, seated behind the an esoterica laden table, the Wizard gazes into his orb.",
     choices: [
       {
-        text: "You win!",
+        text: "I have come to end you, wizard!",
+        nextNode: 'floor-fiveyell'
+      },
+      {
+        text: "Wait... I think he's asleep...",
+        nextNode: 'floor-fivethief', playerClass: 'Thief'
+      }
+    ]
+  },
+  {
+    id: 'floor-fiveyell',
+    text: "The wizard's eyes flick open to you and glow with a searing white flame. 'You have only come to your doom'.",
+    choices: [
+      {
+        text: "I have come to end you, wizard!",
+        nextNode: 'floor-fiveyell'
+      }
+    ]
+  },
+  {
+    id: 'floor-fivethief',
+    text: "With years of skulking under your belt, you immediately recognise that the wizard isn't pondering anything. He's asleep with his eyes open! <br> You easily creep around the tower's final floor and ransack the place, escaping with your pockets bulging with swag.",
+    choices: [
+      {
+        text: "The treasure is mine!!",
         nextNode: 'win'
       }
     ]
   },
+
 
   //Victory! Calls the winGame action
   {
