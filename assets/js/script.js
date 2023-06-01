@@ -1,7 +1,7 @@
 /* Player Name */
 
-let playerName = [];
-let playerClass = [];
+let playerName = "";
+let playerClass = "";
 let playerHealth = 3;
 
 let winCount = 0; 
@@ -143,6 +143,20 @@ function updateGameContent() {
     }
   }
 }
+
+// Function for picking a random Node 
+function selectRandomNode(nextNodes) {
+  const random = Math.random();
+  let accumulatedProbability = 0;
+
+  for (const node of nextNodes) {
+    accumulatedProbability += node.probability;
+    if (random <= accumulatedProbability) {
+      return node.node;
+    }
+  }
+}
+
 
 //Tracks the number of player victories 
 function winGame() {
@@ -413,11 +427,45 @@ const story = [
   //Third Floor// 
   {
     id: 'floor-three',
-    text: "You enter the third floor now",
+    text: "You enter the third floor and before you stands a monstrous Orc in gleaming armour. 'None pass Zug-Zug!' he yells.",
     choices: [
       {
-        text: "This is as far as I've written so far D:!",
+        text: "Orcs and Goblins share a common dialect!",
+        nextNode: 'floor-threegoblin', playerClass: 'Goblin'
+      },
+      {
+        text: "Then to battle!",
+        nextNode: selectRandomNode([{ node: 'floor-threefightwin', probability: 0.6 }, { node: 'floor-threefightlose', probability: 0.4 }])
+      }
+    ]
+  },
+  {
+    id: 'floor-threegoblin',
+    text: "It turns out that Zugzabar Zugzarian, his full name, is far more eloquent and well spoken in his native tongue. <br> You two share a laugh over the misunderstanding that almost led to one of your deaths. He steps aside gladly to allow you to continue your journey.",
+    choices: [
+      {
+        text: "Orcs and Goblins share a common dialect!",
         nextNode: 'floor-four'
+      }
+    ]
+  },
+  {
+    id: 'floor-threefightwin',
+    text: "You easily dispatch of the fearsome guardian and continue on your quest to ascend the wizard's tower.",
+    choices: [
+      {
+        text: "I am a true warrior!",
+        nextNode: 'floor-four'
+      }
+    ]
+  },
+  {
+    id: 'floor-threefightlose',
+    text: "Despite taking a deep wound in the struggle, you manage to overcome the fearsome Orc and continue to the next floor.",
+    choices: [
+      {
+        text: "Ouchy.",
+        nextNode: 'floor-four', damage: 1 
       }
     ]
   },
@@ -425,10 +473,10 @@ const story = [
   //Fourth Floor// 
   {
     id: 'floor-four',
-    text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
+    text: "You make it to the next floor and find that there's nothing on it.",
     choices: [
       {
-        text: "Numba Five!",
+        text: "Oh hey that's neat!",
         nextNode: 'floor-five'
       }
     ]
@@ -461,7 +509,7 @@ const story = [
   //Generic Game Over// 
   {
     id: 'gameOver',
-    text: "With this choice, you have fallen to the Wizard's tower.",
+    text: "With this choice, you have fallen to the Wizard's tower, and lay dead on the tiles.",
     choices: [
       {
         text: "Try Again?",
