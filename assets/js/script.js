@@ -495,11 +495,12 @@ const story = [
   },
   {
     id: 'floor-fiveyell',
-    text: "The wizard's eyes flick open to you and glow with a searing white flame. 'You have only come to your doom'.",
+    text: "The wizard's eyes flick open to you and glow with a searing white flame. 'You have only come to your doom'. He raises his hand and from its end shoots a flaming white fireball.",
     choices: [
       {
-        text: "I have come to end you, wizard!",
-        nextNode: 'floor-fiveyell'
+        text: "I'll meet him with my own spell!",
+        nextNode: selectRandomNode([{ node: 'floor-fivewizardwin', probability: 0.4 }, { node: 'floor-fivewizardlose', probability: 0.6 }])
+        , playerClass: 'Wizard'
       }
     ]
   },
@@ -513,6 +514,37 @@ const story = [
       }
     ]
   },
+  {
+    id: 'floor-fivewizardwin',
+    text: "Your years of training pay off as you counterspell the Wizard's flaming fury back at him, and watch as he melts into a white sludge with the consistency of a melted marshmallow. The tower is now yours to command and control!",
+    choices: [
+      {
+        text: "Hahaha I'm the greatest!!",
+        nextNode: 'win'
+      }
+    ]
+  },
+  {
+    id: 'floor-fivewizardlose',
+    text: "The Wizard's power is far too much for your puny counterspell, and the last thing you remember is the searing white heat melting your eyeballs from your head.",
+    choices: [
+      {
+        text: "Oh nooooo!!",
+        nextNode: 'floor-fivewizarddead', damage: 'kill'
+      }
+    ]
+  },
+  {
+    id: 'floor-fivewizarddead',
+    text: "You are now nothing more than a pile of goo on the wizard's floor, and your one lasting legacy being how much of a pain you are going to be to get out of his carpet.",
+    choices: [
+      {
+        text: "Try Again?",
+        nextNode: 1, heal: 3
+      }
+    ]
+  },
+
 
 
   //Victory! Calls the winGame action
