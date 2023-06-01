@@ -34,7 +34,6 @@ body {
 
     /* Text styling */
     text-align: center;
-    text-justify: center;
     margin: auto;
     max-width: 33%;
     max-height: 80%;
@@ -54,7 +53,6 @@ body {
 
     /* Text styling */
     text-align: center;
-    text-justify: center;
     margin: auto;
     max-width: 33%;
     max-height: 80%;
@@ -239,7 +237,6 @@ body {
 
     #hero-image {
         height: 100vh;
-        display: absolute;
         position: fixed;
     }
 
