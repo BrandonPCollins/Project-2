@@ -4,6 +4,8 @@ let playerName = [];
 let playerClass = [];
 let playerHealth = 3;
 
+var currentStoryNode = 1;
+
 const textElement = document.getElementById('intro');
 const buttonContainer = document.getElementById('button-container');
 const healthProgress = document.getElementById('health-progress');
@@ -33,6 +35,7 @@ function saveName() {
     + `<p class="fade2">As I pondered my orb, it foretold of your coming. It also told me you were a warrior of some repute. Remind me, of which school do you hail?</p>`;
 
   document.getElementById("button-container").innerHTML = createClasses();
+  
 }
 
 /* Event Listener for first name */
@@ -63,6 +66,9 @@ function setClass(classtype) {
 }
 
 function startGame() {
+  // Reset story-nodes for post-reset 
+  currentStoryNode = 1;
+
   // Create the option Buttons
   textElement.innerHTML = `<p class="fade">You stand before the Wizard's tower. Its five floors have been the bane of many an adventurer, but you are built differently.</p>`;
 
@@ -98,8 +104,6 @@ function startGame() {
   healthProgress.style.width = playerHealth + 3;
 }
 
-var currentStoryNode = 1;
-
 function updateGameContent() {
   var currentStory = story.find(function (node) {
     return node.id === currentStoryNode;
@@ -131,6 +135,45 @@ function updateGameContent() {
   }
 }
 
+function resetGame() {
+  // Reset player variables
+  playerName = [];
+  playerClass = [];
+  playerHealth = 3;
+
+  updateHealthBar()
+
+  // Reset game content
+  textElement.innerHTML = "";
+  buttonContainer.innerHTML = "";
+
+  var healthBar = document.getElementById('health-bar');
+  healthBar.style.display = 'none';
+
+  // Reset completed choices
+  story.forEach(function (node) {
+    node.choices.forEach(function (choice) {
+      choice.completed = false;
+    });
+  });
+
+  // Show initial introduction
+  document.getElementById("intro").innerHTML = `<p class="fade">Greetings adventurer. Your perilous quest to the top of the wizard's tower begins now. But first, introductions.</p>`
+    + `<p class="fade2">By what moniker are you best known?</p>`
+
+  // Show input field and "Venture Forth" button
+  document.getElementById("button-container").innerHTML = ` <input type="text" id="fname" name="fname" placeholder="???" class="input" required><br>
+  <button type="submit" onclick="saveName()" class="button">Venture Forth</button>`;
+
+  document.getElementById('fname').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      document.querySelector('button[type="submit"]').click();
+    }
+  });
+}
+
+
 function healPlayerHealth(amount) {
   playerHealth += amount
 
@@ -154,16 +197,6 @@ function updateHealthBar() {
   healthText.innerHTML = `<p>${playerHealth} / 3</p>`;
   healthProgress.style.width = `${(playerHealth / 3) * 100}%`;
 }
-
-// Reset Game after game over// 
-
-function resetGame() {
-  playerHealth = 3;
-  updateHealthBar();
-  currentStoryNode = 1;
-  updateGameContent();
-}
-
 
 // Story Nodes //
 
@@ -205,6 +238,12 @@ function choose(choiceIndex) {
       healPlayerHealth(heal);
     }
     currentStoryNode = nextNode;
+
+    // Call function if the choice has one
+    if (chosenChoice.action) {
+      chosenChoice.action();
+    }
+
 
     // Update the game content
     updateGameContent();
@@ -321,7 +360,7 @@ const story = [
     text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
     choices: [
       {
-        text: "Riddles are dumb, and knights solve their problems with swords!",
+        text: "Onwards!",
         nextNode: 'floor-three'
       }
     ]
@@ -332,7 +371,7 @@ const story = [
     choices: [
       {
         text: "You confidently walk through the door and to the next floor!",
-        nextNode: 'floor-three,'
+        nextNode: 'floor-three'
       },
     ]
   },
@@ -355,7 +394,7 @@ const story = [
     choices: [
       {
         text: "This is as far as I've written so far D:!",
-        nextNode: 'floor-three'
+        nextNode: 'floor-four'
       }
     ]
   },
@@ -366,8 +405,8 @@ const story = [
     text: "A brief thrashing later and you've made short work of the red guard, leaving his cowering twin. A blunt 'Are you the dead one' discerns quickly whether he is the honest or the liar, and makes it simple to continue upwards through the correct door.",
     choices: [
       {
-        text: "Riddles are dumb, and knights solve their problems with swords!",
-        nextNode: 'floor-three'
+        text: "Numba Five!",
+        nextNode: 'floor-five'
       }
     ]
   },
@@ -378,7 +417,7 @@ const story = [
     text: "You have reached the final floor of the Wizard's Tower, and before you, seated behind the an esoterica laden table, the Wizard gazes into his orb.",
     choices: [
       {
-        text: "Riddles are dumb, and knights solve their problems with swords!",
+        text: "You win!",
         nextNode: 'winNode'
       }
     ]
@@ -391,7 +430,7 @@ const story = [
     choices: [
       {
         text: "Play Again?",
-        nextNode: 1
+        action: resetGame      
       }
     ]
   },
