@@ -98,7 +98,7 @@ function startGame() {
   healthProgress.style.width = playerHealth + 3;
 }
 
-const currentStoryNode = 1;
+var currentStoryNode = 1;
 
 function updateGameContent() {
   var currentStory = story.find(function (node) {
