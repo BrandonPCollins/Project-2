@@ -11,21 +11,29 @@ The game operates in the vein of a classic Dungeon Crawler, prompting the player
 
 ### Logo 
 
-Advised in my first project to make use of a colour pallette generator so did so here using these colors 
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
+Front and centre atop my website is the Wizard's Tower logo.
 
 Used these colours when creation my logo in paint.net
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/b66ad3f5-ce04-4018-a1c0-40472fcb97f6)
 
 
-Lighthouse Accesibility Review
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5478398e-50c0-4970-9e6a-9639e2434efc)
+Advised in my first project to make use of a colour pallette generator, so using adobe's palette chooser I picked the colours 
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
+
+### Story Nodes 
+
+Beneath the logo and centered within the screen is the story 
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/db1fad54-b378-4733-98f2-30d8731a6b4a)
+
 
 ### Story Nodes 
 
 ### Further Development 
 
 # Testing 
+
+Lighthouse Accesibility Review
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5478398e-50c0-4970-9e6a-9639e2434efc)
 
 Responsivity checked via https://ui.dev/amiresponsive   
 
