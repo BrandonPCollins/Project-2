@@ -31,15 +31,20 @@ Beneath the logo and centered within the screen is the div containing the dynami
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/24f37bb2-9dc6-4806-8427-9f726c9c8447) ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/c68ee803-ef02-4794-bd85-6667b5451ef4)
 
-
-On click of 'Venture Forth' submission button with a valid name entered the central text will update, and the text box will be replaced with a set of buttons. This prompts the player to choose a class which is then saved as a variable moving forward, granting them diverse options while traversing the tower. These story options will then update dynamically as the player progresses throughout the tower, allowing them to choose how they tackle the obstacles based on their own inclination and class. 
+On click of 'Venture Forth' submission button with a valid name entered the central text will update, and the text box will be replaced with a set of buttons. This prompts the player to choose a class which is then saved as a variable moving forward, granting them diverse options while traversing the tower.
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/18a3fb58-7312-4a38-a3d1-dcebc2040356)
+
+Afer the player's class is chosen, the true journey begins as the various javascript functions activate and enter the player into the story node cycle. From there the story text and options will then update dynamically as the player progresses throughout the tower, allowing them to choose how they tackle the obstacles based on their own inclination and class options. 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/82bb8b67-5ddb-4325-89fb-f9aacfcc3007)
 
 
 ### Health Bar 
 
-When the player enters the first floor of the tower their health bar will appear across the bottom of the screen, displaying the number of "hits" they can sustain before death. The further up the tension, there are some options which can immediately kill the player, forcing them to have to restart the game. 
+The primary mechanic the player must track while they traverse the game is their health bar, represented in teh classic video game fashion as a horizontal green bar. The design intentionally evokes the health bars of early JRPGs such as Final Fantasy or Dragon Quest, and to any player with very basic video game literacy it will be immediately apparent what its purpose is.
+
+The health bar is initially hidden for UI purposes until the player enters the first floor of the tower, upon which health bar will appear across the bottom of the screen in a very sleek sliding animation. The number in its centre displays the number of "hits" the player can sustain before death, and as the player loses health the bar updates dynamically based on the percentage of health the player has remaining. This serves as a strong and immediate visual indicator to the player as to how close they are to death. The further up the tension, there are some options which can immediately kill the player, forcing them to have to restart the game which they must learn to recognise and navigate through mutlitple attempts at the tower.
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/2e272b39-812b-4da8-8f1c-94108ff8950e)
 
