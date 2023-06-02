@@ -46,6 +46,13 @@ When the player enters the first floor of the tower their health bar will appear
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/f2b8ec45-3e3d-40fd-ae73-0d22e91c6dec)
 
+### Victory Tracking 
+
+If the player manages to conquer the Wizard's Tower they are rewarded with a counter telling them how many times they have beaten the tower in their current session, alongside the option to restart the game. This adds replayability function to the game without the need for the player to manually refresh the page, and gives them the chance to view all possible outcomes under the classes that they did not play. 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/ca5f894b-c5ff-4d44-b0bf-f004fbd1531b)
+
+
 ### Further Development 
 
 * Further expand on options and branching paths 
