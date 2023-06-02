@@ -33,9 +33,13 @@ Beneath the logo and centered within the screen is the div containing the dynami
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/24f37bb2-9dc6-4806-8427-9f726c9c8447) ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/c68ee803-ef02-4794-bd85-6667b5451ef4)
 
 
-On click of the button with a name entered the central text will update, and the text box will be replaced with a set of buttons, prompting the  player to choose a class. 
+On click of 'Venture Forth' submission button with a valid name entered the central text will update, and the text box will be replaced with a set of buttons. This prompts the player to choose a class which is then saved as a variable moving forward, granting them diverse options while traversing the tower. 
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/18a3fb58-7312-4a38-a3d1-dcebc2040356)
+
+Health Bar Appears Here 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/2e272b39-812b-4da8-8f1c-94108ff8950e)
 
 
 
