@@ -61,7 +61,7 @@ If the player manages to conquer the Wizard's Tower they are rewarded with a cou
 
 ### Further Development 
 
-* Further work would almost certainly expand on the available of options and classes which from which the player can choose. The current story-line doesn't take full advantage of the possibilities of branching paths, and rather serves more akin to a proof of concept for a game than a fully realised experience. Refinement to both the text and the options presented would be paramount priority. 
+* Further work would almost certainly expand on the availability of options and classes which from which the player can choose. The current story-line doesn't take full advantage of the possibilities of branching paths, and rather serves more akin to a proof of concept for a game than a fully realised experience. Refinement to both the text and the options presented would be paramount priority. 
 
 * I initially envisioned incorporating a combat system based on a math roll function. When I investigated the possibility of such it proved to do it in a meaningful and impactful way would be too much of a time constraint given teh project's deadline, and it was repurposed slightly into the selectRandomNode function which was a more stramlined variation of a similar mechanic. Future iterations of the game would likely include such a function. 
 
@@ -96,6 +96,18 @@ The [Jigsaw Validator](https://jigsaw.w3.org/) returned no errors when analysing
 The official [Jshint Validator](https://jshint.com/) returned no errors when analysing the Javascript. It returned the following metrics: 
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5acae8f4-8f9e-477f-8189-0aacdcc3ecab)
+
+### Known Bugs & Issues 
+
+While Jshint didn't return any destructive errors, it did have a few notes as to warnings. It marked several variables as unused, though it seems an issue with it being unable to read the functions which are created within other functions. 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/018bda6e-125b-4a37-96be-f590178a7676)
+
+It also returned several warnings regarding the "let" assignation when assigning a variable, though I tested the code in several browsers and it did not seem to be an issue.
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/a35433b9-0cb3-411e-9d31-9728aac6d006)
+
+
 
 # Deployment 
 
