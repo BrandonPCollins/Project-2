@@ -57,14 +57,18 @@ If the player manages to conquer the Wizard's Tower they are rewarded with a cou
 
 * Further expand on options and branching paths 
 
-# Testing 
+## Testing 
 
-Lighthouse Accesibility Review
+### Lighthouse Accesibility Review
 
-
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5478398e-50c0-4970-9e6a-9639e2434efc)
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/105084b0-9052-475c-b0ee-80b65f513c03)
 
 Responsivity checked via https://ui.dev/amiresponsive   
+
+
+### Validator Testing 
+
+
 
 # Deployment 
 
