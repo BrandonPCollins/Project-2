@@ -28,14 +28,14 @@ To compliment the Logo I went with the image of a starry sky taken from [Pexels]
 
 ### Story Nodes 
 
-Beneath the logo and centered within the screen is the div containing the dynamically updating story nodes pulled by the javascript. When the player first opens the page, the text will fade in, further heightening the mysticism inherit in the game, and then the player will be prompted to enter their name via a text box. 
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/20544b38-bff1-496c-8f36-a32d51629b1a)
+Beneath the logo and centered within the screen is the div containing the dynamically updating story nodes pulled by the javascript. When the player first opens the page, the text will fade in, further heightening the mysticism inherit in the game, and then the player will be prompted to enter their name via a text box. Should the player try to advance without entering a name, an error alert is displayed.
 
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/db1fad54-b378-4733-98f2-30d8731a6b4a)
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/24f37bb2-9dc6-4806-8427-9f726c9c8447) ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/c68ee803-ef02-4794-bd85-6667b5451ef4)
 
-On click this will be updated to isplay 
 
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/c954c6a0-ce9c-47e2-bf50-69f2e69c784f)
+On click of the button with a name entered the central text will update, and the text box will be replaced with a set of buttons, prompting the  player to choose a class. 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/18a3fb58-7312-4a38-a3d1-dcebc2040356)
 
 
 
