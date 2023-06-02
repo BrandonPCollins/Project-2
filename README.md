@@ -4,22 +4,27 @@ For our second project we were tasked with the creation of a web-page which inte
 
 The game operates in the vein of a classic Dungeon Crawler, prompting the player for the name and then giving them a choice of potential character classes. The chosen classes then allow for differing potential outcomes as they make their way up the 5 floors of the eponymous Wizard's Tower, facing trials and tribulations that may find them ending up as just anoter casuality of the notoriously deadly construction. To represent this upon their entrance to the tower, the player is provided with a health bar which they must preserve on their journey, or perish to the perils before them. As a short game the site exists to provide the same interactive experience which was available through the those books I adored, whether the player is a returning fan like myself, or experiencing them for the first time.
 
+More importantly it served as a great learning experience for myself in building a functional and interactive javascript game. 
+
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/b0da2585-642e-4d79-b092-b76aa513923e) 
 
 
 ## Features 
 
-### Logo 
+### Logo & Background 
 
-Front and centre atop my website is the Wizard's Tower logo, immediately conveying to the user the site's identity. I designed the logo using the paint.net image editor, styling the text, applying the gradient and then placing the Wizard's hat stock image taken from [Vecteezy](https://www.vecteezy.com/vector-art/2514766-wizard-hat-piece). 
+Front and centre atop my website is the Wizard's Tower logo, immediately conveying to the user the site's identity. I designed the logo using the paint.net image editor, styling the text, applying the gradient and then placing the Wizard's hat stock image taken from [Vecteezy](https://www.vecteezy.com/vector-art/2514766-wizard-hat-piece). I tried to ensure everything about the logo presented a fantastical aesthetic, immediately connoting the kind of game the player was about to partake in. 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/b66ad3f5-ce04-4018-a1c0-40472fcb97f6)
+
+Advised in my first project to make use of a colour pallette generator, so I made use of Adobe's Colour Palette generator when picking the shades of my gradient to ensure they would be complementary shades, using the RGB values when applying the colours in paint.net. 
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
 
-Used these colours when creation my logo in paint.net
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/b66ad3f5-ce04-4018-a1c0-40472fcb97f6)
+To compliment the Logo I went with the image of a starry sky taken from [Pexels](https://www.pexels.com/photo/stars-1257860/) which I cropped and manipulated to serve the purpose as a background. I wanted to reinforce the mystical and fantastical atmosphere of the game, and the common connnotation of wizards and star-gazing made this ideal as a background. Given more time I might have made a parralax background of the stars, but I deemed it superflouos to the main goal of the project and was thus not a high priority. 
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/84c43d5e-9ab3-4b9a-b2ed-160e7ba0b280)
 
 
-Advised in my first project to make use of a colour pallette generator, so using adobe's palette chooser I picked the colours 
 
 ### Story Nodes 
 
