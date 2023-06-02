@@ -4,7 +4,7 @@ let playerName = "";
 let playerClass = "";
 let playerHealth = 3;
 
-let winCount = 0; 
+let winCount = 0;
 
 var currentStoryNode = 1;
 
@@ -37,7 +37,7 @@ function saveName() {
     + `<p class="fade2">As I pondered my orb, it foretold of your coming. It also told me you were a warrior of some repute. Remind me, of which school do you hail?</p>`;
 
   document.getElementById("button-container").innerHTML = createClasses();
-  
+
 }
 
 /* Event Listener for first name */
@@ -461,7 +461,7 @@ const story = [
     choices: [
       {
         text: "Ouchy.",
-        nextNode: 'floor-four', damage: 1 
+        nextNode: 'floor-four', damage: 1
       }
     ]
   },
