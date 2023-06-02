@@ -19,7 +19,7 @@ Front and centre atop my website is the Wizard's Tower logo, immediately conveyi
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/b66ad3f5-ce04-4018-a1c0-40472fcb97f6)
 
-Advised in my first project to make use of a colour pallette generator, so I made use of Adobe's Colour Palette generator when picking the shades of my gradient to ensure they would be complementary shades, using the RGB values when applying the colours in paint.net. 
+Advised in my first project to make use of a colour pallette generator, so I made use of Adobe's Colour Palette generator when picking the shades of my gradient to ensure they would be complementary shades, using the RGB values when applying the colours in paint.net. I went with a purple to orange gradient as the colours not only appealed to me, but held connotations of sunsent and dusk, which are magical liminal times which are often seen and wondrous which gelled well with the atmosphere I was trying to set for the website.
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
 
