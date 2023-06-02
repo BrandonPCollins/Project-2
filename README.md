@@ -126,6 +126,8 @@ Images from Pexels & Vecteezy
 
 Color Wheel from Adobe Color 
 
-Instumenal in learning how to process through a Choose your Own Adventure game in Javascript was this video from Web Dev Simplified. I expanded upon what they have shown enough to clearly make the work my own, but without this video it would have taken me far longer to get my feet on the ground in this project. 
+Troubleshooting via StackOverflow, W3Schools and Slack Searching.
+
+Instumental in learning how to process through a Choose your Own Adventure game in Javascript was this video from Web Dev Simplified. I expanded upon what they have shown enough to clearly make the work my own, but without this video it would have taken me far longer to get my feet on the ground in this project. 
 
 [https://www.youtube.com/watch?v=TdMhQhIC9Bw&t=47s](https://www.youtube.com/watch?v=R1S_NhKkvGA&t=97s)
