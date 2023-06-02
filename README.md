@@ -1,5 +1,8 @@
-# Project-2
+# Project-2 - The Wizard's Tower
 
+For our second project we were tasked with the creation of a web-page which interactive front-end capabilities in order to showcase a working grasp of HTML, CSS and Javascript all working in collusion with one another to deliver a dynamic experience for the user. To this end I created a basic "Choose Your Own Adventure" game, modelled on the Fighting Fantasy books written by Ian Livingston and Steve Jackson whic I adored during my formative years. 
+
+The game operates in the vein of a classic Dungeon Crawler, prompting the player for the name and then giving them a choice of potential character classes. The chosen classes then allow for differing potential outcomes as they make their way up the 5 floors of the eponymous Wizard's Tower, facing trials and tribulations that may find them ending up as just anoter casuality of the notoriously deadly construction.  
 
 Advised in my first project to make use of a colour pallette generator so did so here using these colors 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
