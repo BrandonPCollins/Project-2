@@ -11,14 +11,15 @@ The game operates in the vein of a classic Dungeon Crawler, prompting the player
 
 ### Logo 
 
-Front and centre atop my website is the Wizard's Tower logo.
+Front and centre atop my website is the Wizard's Tower logo, immediately conveying to the user the site's identity. I designed the logo using the paint.net image editor, styling the text, applying the gradient and then placing the Wizard's hat stock image taken from [Vecteezy](https://www.vecteezy.com/vector-art/2514766-wizard-hat-piece). 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
 
 Used these colours when creation my logo in paint.net
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/b66ad3f5-ce04-4018-a1c0-40472fcb97f6)
 
 
 Advised in my first project to make use of a colour pallette generator, so using adobe's palette chooser I picked the colours 
-![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/692d46dc-3ed1-4766-820c-a5a179aebbe0)
 
 ### Story Nodes 
 
