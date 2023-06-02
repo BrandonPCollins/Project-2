@@ -33,14 +33,18 @@ Beneath the logo and centered within the screen is the div containing the dynami
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/24f37bb2-9dc6-4806-8427-9f726c9c8447) ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/c68ee803-ef02-4794-bd85-6667b5451ef4)
 
 
-On click of 'Venture Forth' submission button with a valid name entered the central text will update, and the text box will be replaced with a set of buttons. This prompts the player to choose a class which is then saved as a variable moving forward, granting them diverse options while traversing the tower. 
+On click of 'Venture Forth' submission button with a valid name entered the central text will update, and the text box will be replaced with a set of buttons. This prompts the player to choose a class which is then saved as a variable moving forward, granting them diverse options while traversing the tower. These story options will then update dynamically as the player progresses throughout the tower, alolowing them to choose how they tackle the obstacles based on their own inclination and class. 
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/18a3fb58-7312-4a38-a3d1-dcebc2040356)
 
-Health Bar Appears Here 
+
+### Health Bar 
+
+When the player enters the first floor of the tower their health bar will appear across the bottom of the screen, displaying the number of "hits" they can sustain before death. The further up the tension, there are some options which can immediately kill the player, forcing them to have to restart the game. 
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/2e272b39-812b-4da8-8f1c-94108ff8950e)
 
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/f2b8ec45-3e3d-40fd-ae73-0d22e91c6dec)
 
 
 
@@ -49,6 +53,8 @@ Health Bar Appears Here
 # Testing 
 
 Lighthouse Accesibility Review
+
+
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5478398e-50c0-4970-9e6a-9639e2434efc)
 
 Responsivity checked via https://ui.dev/amiresponsive   
