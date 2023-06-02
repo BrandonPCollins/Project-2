@@ -61,7 +61,9 @@ If the player manages to conquer the Wizard's Tower they are rewarded with a cou
 
 ### Further Development 
 
-* Further expand on options and branching paths 
+* Further expand on the available options and classes  which the player can choose from. 
+
+* I initially envisioned incorporating a combat system based on a math roll function. When I investigated the possibility of such it proved to do it in a meaningful and impactful way would be too much of a time constraint given teh project's deadline, and it was repurposed slightly into the selectRandomNode function which was a more stramlined variation of a similar mechanic. Future iterations of the game would likely include such a function. 
 
 ## Testing 
 
