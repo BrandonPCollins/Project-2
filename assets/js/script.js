@@ -501,9 +501,38 @@ const story = [
         text: "I'll meet him with my own spell!",
         nextNode: selectRandomNode([{ node: 'floor-fivewizardwin', probability: 0.4 }, { node: 'floor-fivewizardlose', probability: 0.6 }])
         , playerClass: 'Wizard'
+      }, 
+      {
+        text: "I'll dodge left!",
+        nextNode: selectRandomNode([{ node: 'floor-fivedodge', probability: 0.2 }, { node: 'floor-fivewizardlose', probability: 0.8 }]) 
+      },
+      {
+        text: "I'll dodge right!",
+        nextNode: 'floor-fivedodge' 
       }
     ]
   },
+  {
+    id: 'floor-fivedodge',
+    text: "You narrowly manage to avoid the wizard's spell. Now it is time for your counter-attack",
+    choices: [
+      {
+        text: "Charge!",
+        nextNode: 'floor-fivecharge'
+      }
+    ]
+  },
+  {
+    id: 'floor-fivecharge',
+    text: "You bear down upon the Wizard's weak frame and he smashes beneath your might. He lies crumpled and dead at your feet, and the tower is yours!",
+    choices: [
+      {
+        text: "VICTORY!",
+        nextNode: 'win'
+      }
+    ]
+  },
+
   {
     id: 'floor-fivethief',
     text: "With years of skulking under your belt, you immediately recognise that the wizard isn't pondering anything. He's asleep with his eyes open! <br> You easily creep around the tower's final floor and ransack the place, escaping with your pockets bulging with swag.",
@@ -526,7 +555,7 @@ const story = [
   },
   {
     id: 'floor-fivewizardlose',
-    text: "The Wizard's power is far too much for your puny counterspell, and the last thing you remember is the searing white heat melting your eyeballs from your head.",
+    text: "The Wizard's power is far beyond your comprehension, and the last thing you remember is the searing white heat melting your eyeballs from your head.",
     choices: [
       {
         text: "Oh nooooo!!",
