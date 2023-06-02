@@ -25,7 +25,6 @@ To compliment the Logo I went with the image of a starry sky taken from [Pexels]
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/84c43d5e-9ab3-4b9a-b2ed-160e7ba0b280)
 
 
-
 ### Story Nodes 
 
 Beneath the logo and centered within the screen is the div containing the dynamically updating story nodes pulled by the javascript. When the player first opens the page, the text will fade in, further heightening the mysticism inherit in the game, and then the player will be prompted to enter their name via a text box. Should the player try to advance without entering a name, an error alert is displayed.
@@ -61,10 +60,15 @@ If the player manages to conquer the Wizard's Tower they are rewarded with a cou
 
 ### Lighthouse Accesibility Review
 
+The accesibility of the site was tested using Google Chrome's built-in lighthouse feature, where The Wizard's Tower scored highly in all metrics. 
+
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/105084b0-9052-475c-b0ee-80b65f513c03)
 
-Responsivity checked via https://ui.dev/amiresponsive   
+### Responsivity Testing 
 
+Responsivity checked via https://ui.dev/amiresponsive, and by myself and others across several different platforms and devices. This was a major downfalll for me in my previous project and was something I was incredibly conscious of in making an effort to grow in my use of screen responsivity. 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/112d70c6-40f1-4202-8cd3-3b6246180cbe)
 
 ### Validator Testing 
 
@@ -73,20 +77,16 @@ Responsivity checked via https://ui.dev/amiresponsive
 The [W3C Validator](https://validator.w3.org/) returned no errors when analysing the site.
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/4e6450b0-fb20-42cd-9f95-bd6ff82a9f45) 
 
-
 * CSS Testing 
 
 The [Jigsaw Validator](https://jigsaw.w3.org/) returned no errors when analysing the site.
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/3eb4047f-b427-4c60-b0cb-afa1596aacf0)
-
 
 * Javascript Testing 
 
 The official [Jshint Validator](https://jshint.com/) returned no errors when analysing the Javascript. It returned the following metrics: 
 
 ![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5acae8f4-8f9e-477f-8189-0aacdcc3ecab)
-
-
 
 # Deployment 
 
@@ -98,11 +98,12 @@ The site was deployed to GitHub pages using the following steps:
 4) Then after clicking save, Github provided the link to my completed deployed website.
 
 The site is live and deployed through GitHub pages and can be found : [Here](https://brandonpcollins.github.io/Project-2/)
+
 # Credits
 
 Images from Pexels & Vecteezy
 
-Color Wheel Adobe Color 
+Color Wheel from Adobe Color 
 
 Instumenal in learning how to process through a Choose your Own Adventure game in Javascript was this video from Web Dev Simplified. I expanded upon what they have shown enough to clearly make the work my own, but without this video it would have taken me far longer to get my feet on the ground in this project. 
 
