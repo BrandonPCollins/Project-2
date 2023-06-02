@@ -68,6 +68,14 @@ Responsivity checked via https://ui.dev/amiresponsive
 
 ### Validator Testing 
 
+* HTML Testing
+
+The [W3C Validator](https://validator.w3.org/) returned no errors when analysing the site.
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/4e6450b0-fb20-42cd-9f95-bd6ff82a9f45) 
+
+
+* CSS Testing 
+
 
 
 # Deployment 
