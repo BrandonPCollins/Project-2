@@ -76,6 +76,16 @@ The [W3C Validator](https://validator.w3.org/) returned no errors when analysing
 
 * CSS Testing 
 
+The [Jigsaw Validator](https://jigsaw.w3.org/) returned no errors when analysing the site.
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/3eb4047f-b427-4c60-b0cb-afa1596aacf0)
+
+
+* Javascript Testing 
+
+The official [Jshint Validator](https://jshint.com/) returned no errors when analysing the Javascript. It returned the following metrics: 
+
+![image](https://github.com/BrandonPCollins/Project-2/assets/131177569/5acae8f4-8f9e-477f-8189-0aacdcc3ecab)
+
 
 
 # Deployment 
